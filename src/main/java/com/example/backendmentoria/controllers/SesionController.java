@@ -33,15 +33,21 @@ public class SesionController {
                 .createResponse(HttpStatus.NO_CONTENT);
     }
 
-    @GetMapping("/listar")
+    @GetMapping
     public List<Sesion> listarReservas(){
         return sesionServiceImpl.listarSesion();
     }
 
-    @GetMapping("/listar/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<WrapperResponse<Sesion>> obtenerSesionPorId(@PathVariable("id") Long id){
         Sesion sesion = sesionServiceImpl.obtenerSesionPorId(id);
         return new WrapperResponse<>(true, "success", sesion).createResponse(HttpStatus.OK);
+    }
+
+    @GetMapping("/listar/{id}")
+    public ResponseEntity<WrapperResponse<List<Sesion>>> listarSesionesPorUsuario(@PathVariable("id") Integer iduser){
+        List<Sesion> sesiones = sesionServiceImpl.listarSesionesPorUsuario(iduser);
+        return new WrapperResponse<>(true, "success", sesiones).createResponse(HttpStatus.OK);
     }
 
 }

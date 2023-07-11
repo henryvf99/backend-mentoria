@@ -44,4 +44,9 @@ public class SesionServiceImpl implements SesionService {
         return nota.orElseThrow(() -> new ResourceNotFoundException("Sesion no found"));
     }
 
+    @Transactional
+    public List<Sesion> listarSesionesPorUsuario(Integer iduser){
+        return sesionRepository.findByIduser(iduser);
+    }
+
 }

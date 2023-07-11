@@ -16,4 +16,6 @@ public interface TemaService {
 
     public Tema obtenerTemaPorId(Long id);
 
+    public List<Tema> listarTemasPorUsuario(Integer iduser);
+
 }

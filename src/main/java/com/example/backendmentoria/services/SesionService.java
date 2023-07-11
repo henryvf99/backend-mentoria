@@ -14,4 +14,6 @@ public interface SesionService {
 
     public Sesion obtenerSesionPorId(Long id);
 
+    public List<Sesion> listarSesionesPorUsuario(Integer iduser);
+
 }

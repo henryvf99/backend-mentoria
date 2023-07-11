@@ -40,15 +40,21 @@ public class TemaController {
                 .createResponse(HttpStatus.NO_CONTENT);
     }
 
-    @GetMapping("/listar")
+    @GetMapping
     public List<Tema> listarReservas(){
         return temaService.listarTemas();
     }
 
-    @GetMapping("/listar/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<WrapperResponse<Tema>> obtenerTemaPorId(@PathVariable("id") Long id){
         Tema tema = temaService.obtenerTemaPorId(id);
         return new WrapperResponse<>(true, "success", tema).createResponse(HttpStatus.OK);
+    }
+
+    @GetMapping("/listar/{id}")
+    public ResponseEntity<WrapperResponse<List<Tema>>> listarTemasPorUsuario(@PathVariable("id") Integer iduser){
+        List<Tema> temas = temaService.listarTemasPorUsuario(iduser);
+        return new WrapperResponse<>(true, "success", temas).createResponse(HttpStatus.OK);
     }
 
 }

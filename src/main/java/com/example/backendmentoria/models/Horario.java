@@ -18,8 +18,8 @@ public class Horario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "fecha", length = 60, nullable = false)
-    private String fecha;
+    @Column(name = "hora", length = 60, nullable = false)
+    private String hora;
 
     @JsonIgnore
     @ManyToOne

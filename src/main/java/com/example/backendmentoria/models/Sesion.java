@@ -21,20 +21,23 @@ public class Sesion {
     @Column(name = "nombre", length = 60, nullable = false)
     private String nombre;
 
-    @Column(name = "horaInicio", length = 60, nullable = false)
-    private String horaInicio;
+    @Column(name = "fechaInicio", length = 60, nullable = false)
+    private String fechaInicio;
 
-    @Column(name = "horaFin", length = 60, nullable = false)
-    private String horaFin;
+    @Column(name = "fechaFin", length = 60, nullable = false)
+    private String fechaFin;
 
     @Column(name = "link", length = 60, nullable = false)
     private String link;
 
-    @Column(name = "calificacion", length = 2, nullable = false)
-    private String calificacion;
+    @Column(name = "mentor", length = 20, nullable = false)
+    private String mentor;
 
     @Column(name = "anotaciones", length = 300, nullable = false)
     private String anotaciones;
+
+    @Column(name = "iduser", nullable = false)
+    private Integer iduser;
 
     @OneToMany( cascade = CascadeType.ALL, mappedBy = "sesion", fetch = FetchType.LAZY)
     private List<Horario> items;

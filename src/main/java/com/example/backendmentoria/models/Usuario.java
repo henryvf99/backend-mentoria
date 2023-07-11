@@ -23,8 +23,9 @@ public class Usuario implements UserDetails {
     private String apellido;
     private String dni;
     private String celular;
-    @OneToMany( cascade = CascadeType.ALL, mappedBy = "usuario", fetch = FetchType.LAZY)
-    private List<UsuarioOcupacion> ocupacion;
+
+    private String ocupacion;
+
     private boolean enabled = true;
 
     @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy = "usuario")
@@ -136,11 +137,11 @@ public class Usuario implements UserDetails {
         this.usuarioRoles = usuarioRoles;
     }
 
-    public List<UsuarioOcupacion> getOcupacion() {
+    public String getOcupacion() {
         return ocupacion;
     }
 
-    public void setOcupacion(List<UsuarioOcupacion> ocupacion) {
+    public void setOcupacion(String ocupacion) {
         this.ocupacion = ocupacion;
     }
 }

@@ -28,7 +28,6 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Override
     public Usuario guardarUsuario(Usuario usuario, Set<UsuarioRol> usuariosRoles) throws Exception {
-        usuario.getOcupacion().forEach(line->line.setUsuario(usuario));
         Usuario usuarioLocal = usuarioRepository.findByUsername(usuario.getUsername());
         if (usuarioLocal != null){
             System.out.println("El usuario ya existe");

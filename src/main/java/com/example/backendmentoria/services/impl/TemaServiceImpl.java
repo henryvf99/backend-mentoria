@@ -60,4 +60,10 @@ public class TemaServiceImpl implements TemaService {
         Optional<Tema> tema = temaRepository.findById(id);
         return tema.orElseThrow(() -> new ResourceNotFoundException("Tema no found"));
     }
+
+    @Transactional
+    public List<Tema> listarTemasPorUsuario(Integer iduser){
+        return temaRepository.findByIduser(iduser);
+    }
+
 }

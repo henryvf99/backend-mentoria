@@ -23,4 +23,7 @@ public class Tema {
     @Column(name = "descripcion", length = 200, nullable = false)
     private String descripcion;
 
+    @Column(name = "iduser", nullable = false)
+    private Integer iduser;
+
 }

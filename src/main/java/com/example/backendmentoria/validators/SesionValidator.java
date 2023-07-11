@@ -15,32 +15,12 @@ public class SesionValidator {
             throw new IncorrectResourceRequestException("El nombre debe ser mayor a 3 caracteres");
         }
 
-        if(sesion.getHoraInicio() == null || sesion.getHoraInicio().trim().isEmpty()) {
-            throw new IncorrectResourceRequestException("La hora de inicio es requerida");
-        }
-
-        if(sesion.getHoraInicio().length() < 3) {
-            throw new IncorrectResourceRequestException("La hora de inicio debe ser mayor a 3 caracteres");
-        }
-
-        if(sesion.getHoraFin() == null || sesion.getHoraFin().trim().isEmpty()) {
-            throw new IncorrectResourceRequestException("La hora de finalización es requerido");
-        }
-
-        if(sesion.getHoraFin().length() < 3) {
-            throw new IncorrectResourceRequestException("La hora de finalización debe ser mayor a 3 caracteres");
-        }
-
         if(sesion.getLink() == null || sesion.getLink().trim().isEmpty()) {
             throw new IncorrectResourceRequestException("El link es requerido");
         }
 
         if(sesion.getLink().length() < 3) {
             throw new IncorrectResourceRequestException("El link debe ser mayor a 3 caracteres");
-        }
-
-        if(sesion.getCalificacion() == null || sesion.getCalificacion().trim().isEmpty()) {
-            throw new IncorrectResourceRequestException("La calificación es requerida");
         }
 
         if(sesion.getAnotaciones() == null || sesion.getAnotaciones().trim().isEmpty()) {
